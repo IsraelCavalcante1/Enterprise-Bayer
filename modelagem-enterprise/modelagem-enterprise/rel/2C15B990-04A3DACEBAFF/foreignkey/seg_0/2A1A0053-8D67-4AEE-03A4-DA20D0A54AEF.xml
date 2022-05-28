@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="2A1A0053-8D67-4AEE-03A4-DA20D0A54AEF" containerWithKeyObject="0E180706-09C9-8952-06C5-EA7A8003FF85" localFKIndex="F0E8FD65-1C67-C966-13C7-D57E61DEF1E1" name="Endereco_Estado_FK">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>1593444F-5F2F-F8DD-17CE-1F680029CD3E</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<referredTableLongName>Estado</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>B661D0C5-27A9-3EBD-E0E4-D6E9414F166A</referredTableID>
+<keyObject>489EA1B0-495B-827D-0BB4-E4E4B2B3E4C5</keyObject>
+<referredKeyID>489EA1B0-495B-827D-0BB4-E4E4B2B3E4C5</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_estado</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

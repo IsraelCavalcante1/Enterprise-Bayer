@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="531817B8-E574-7B71-3CE0-F4D1A96DF69E" name="Doenca_Registro">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 23:31:29 UTC</createdTime>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_registro" id="5336AD74-61BE-4EDA-9540-EACFE865CDD4">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 23:31:58 UTC</createdTime>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_pessoa" id="06E4BD2C-D15C-2362-926F-54A7CE318742">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 23:33:01 UTC</createdTime>
+<generatorID>50ADEFBA-D798-1066-EAF7-9FF7DE0E22F8</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="true"/>
+</engineerTo>
+<referedAttribute>071BC795-B57C-4C6B-1397-AE8B1AB5AB17</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_doenca" id="F4C3F23A-6342-7FAE-48BD-D28EB3A7F307">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 23:33:44 UTC</createdTime>
+<generatorID>CAFCF7D5-24C6-E181-5963-E3EAEF00B54E</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="true"/>
+</engineerTo>
+<referedAttribute>43675E26-B63C-DB1C-3D6E-510754A9CDD0</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="data" id="A74742E8-CE07-EEDB-507E-5CE00B466BDF">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 23:32:28 UTC</createdTime>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="DE3AA3EB-5222-715A-97CE-8B597357BA2A" name="Doenca_Registro PK">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 23:32:20 UTC</createdTime>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>5336AD74-61BE-4EDA-9540-EACFE865CDD4</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

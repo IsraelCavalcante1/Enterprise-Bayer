@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B661D0C5-27A9-3EBD-E0E4-D6E9414F166A" name="Estado">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>7D67D413-307D-E869-5578-23F9E9F24625</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_estado" id="88359C15-948E-1422-0D7F-8302F43070AE">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>3465C2F6-62DA-D0DD-DA89-05CFB04B5D13</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome_estado" id="81A88975-280E-69E7-3E56-8E457FB02BBC">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>DDE54D5B-41B1-DF70-180F-90D6FA713D1A</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25</dataTypeSize>
+<ownDataTypeParameters>25,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="uf" id="EA8E4323-07EF-C0E4-9918-284C769A0B77">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>1E956EE2-48F3-40E6-8C45-9AAF0DCA0B35</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>2</dataTypeSize>
+<ownDataTypeParameters>2,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Regiao_id_regiao" id="8C3B7666-61DE-CAC4-82B0-339BA1D1D223">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>6B79E62E-E194-77DF-B567-C399C0F103B0</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A4C7ED95-8464-5FBE-9261-8B75F4963BFF" referredColumn="BBF47BDE-1819-F302-2591-4B5AC682E988"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="489EA1B0-495B-827D-0BB4-E4E4B2B3E4C5" name="Estado_PK">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>F287E016-3224-73B5-05FB-7CC2A8F1B642</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="88359C15-948E-1422-0D7F-8302F43070AE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="78669B46-2F2F-F0BE-7C17-B1FB345FC653" name="Estado_Regiao_FK">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>9DDFA14F-8E58-D7E0-1F12-AA4095207648</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8C3B7666-61DE-CAC4-82B0-339BA1D1D223"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

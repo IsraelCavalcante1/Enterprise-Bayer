@@ -1,0 +1,137 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="251D6C7A-5EF8-45AB-2310-DD6ABADDD2DD" name="Pessoa">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 22:38:22 UTC</createdTime>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_pessoa" id="071BC795-B57C-4C6B-1397-AE8B1AB5AB17">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 22:45:12 UTC</createdTime>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_pessoa_conjuge" id="24C06E14-2D48-08C0-1F59-FBCDB5DBFD62">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 23:13:54 UTC</createdTime>
+<generatorID>5A8818AD-35EA-7F80-EA3B-66F1403A18EB</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>071BC795-B57C-4C6B-1397-AE8B1AB5AB17</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_endereco" id="32D82B58-0E57-17B4-B496-5658F376D7E2">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 23:55:34 UTC</createdTime>
+<generatorID>F659BF66-D96A-6944-C477-5BADE1BA5AAD</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="true"/>
+</engineerTo>
+<referedAttribute>3FE66B74-547A-F0F4-495F-9C2C0A237092</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cpf" id="3DC0E669-F42F-94EA-1242-351062230083">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 22:42:53 UTC</createdTime>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nome" id="55C043EF-E81C-BEF7-3050-02B9889AE857">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 22:43:12 UTC</createdTime>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+<ownDataTypeParameters>80,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nascimento" id="4D08CF29-7C66-2371-5BA4-5F504EBCC7F7">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 22:45:39 UTC</createdTime>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_sus" id="4398F427-DB51-257B-9FAF-BEE78371A6B4">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 22:45:45 UTC</createdTime>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="sexo" id="EDDE339E-F4F7-3837-74EC-9196CD2A78F5">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 22:54:34 UTC</createdTime>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="C903915D-13B8-7C9B-D55E-A70DB39AC441" name="Pessoa PK">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 22:45:31 UTC</createdTime>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>071BC795-B57C-4C6B-1397-AE8B1AB5AB17</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

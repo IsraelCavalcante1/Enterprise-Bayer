@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="7D67D413-307D-E869-5578-23F9E9F24625" name="Estado">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 23:50:31 UTC</createdTime>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_estado" id="3465C2F6-62DA-D0DD-DA89-05CFB04B5D13">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 23:50:39 UTC</createdTime>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nome_estado" id="DDE54D5B-41B1-DF70-180F-90D6FA713D1A">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 23:50:47 UTC</createdTime>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25</dataTypeSize>
+<ownDataTypeParameters>25,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="uf" id="1E956EE2-48F3-40E6-8C45-9AAF0DCA0B35">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 23:51:54 UTC</createdTime>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>2</dataTypeSize>
+<ownDataTypeParameters>2,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_regiao" id="6B79E62E-E194-77DF-B567-C399C0F103B0">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 23:52:19 UTC</createdTime>
+<generatorID>9DDFA14F-8E58-D7E0-1F12-AA4095207648</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="true"/>
+</engineerTo>
+<referedAttribute>2C9BD4A1-87EA-5D4D-2DC4-1C1ED59BA273</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="F287E016-3224-73B5-05FB-7CC2A8F1B642" name="Estado PK">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 23:50:46 UTC</createdTime>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>3465C2F6-62DA-D0DD-DA89-05CFB04B5D13</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
