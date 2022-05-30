@@ -9,7 +9,7 @@ var myLineChart = new Chart(ctx, {
   data: {
     labels: ["Sudeste", "Sul", "Centro-Oeste", "Norte", "Nordeste"],
     datasets: [{
-      label: "Revenue",
+      label: "Casos:",
       backgroundColor: ["#03738C", "#73B2D9", "#F2A444", "#6E8C03", "#BF5E3B"],
       borderColor: "rgba(2,117,216,1)",
       data: [1000, 3000, 10000, 5000, 20000, 14984],
