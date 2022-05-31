@@ -1,0 +1,57 @@
+/* Incluir as customizações neste arquivo */
+
+
+:root{
+    --bg-norte: #6E8C03;
+    --bg-nordeste: #BF5E3B;
+    --bg-centro-oeste: #F2A444;
+    --bg-sudeste: #03738C;
+    --bg-sul: #73B2D9;
+}
+
+/* Header */
+.bg_header__ {
+    --bs-bg-opacity: 1;
+    background-color: #303861;
+  }
+
+  /* Cards */
+  .bg_card__norte {
+      background-color: var(--bg-norte); 
+  }
+  .bg_card__nordeste {
+      background-color: var(--bg-nordeste);
+  }
+  .bg_card__centro-oeste {
+      background-color: var(--bg-centro-oeste);
+  }
+  .bg_card__sudeste {
+      background-color: var(--bg-sudeste);
+  }
+  .bg_card__sul {
+      background-color: var(--bg-sul);
+  }
+
+.logo-bayer{
+    padding-left: 1rem;
+}
+
+.bayer-text-logo{
+    padding-left: 0.75rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 0.2rem;
+    font-size: 1.25rem;
+    text-decoration: none;
+    white-space: nowrap;
+    color: white;
+}
+
+.card{
+    cursor: pointer;
+}
+
+.dashboard-text{
+    margin-bottom: 1rem;
+    margin-left: -4px;
+    margin-top:0.5rem;
+}
