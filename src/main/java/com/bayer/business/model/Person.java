@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Person {
     private int idPerson;
-    private int cpf;
+    private long cpf;
     private String name;
     private Person companion;
     private List<Person> dependents;
@@ -16,9 +16,9 @@ public class Person {
     private List<DiseaseRecord> diseaseRecords = new ArrayList<>();
     private boolean isPregnant;
     private Address address;
-    private int idSus;
+    private long idSus;
 
-    public Person(int cpf, String name, Person companion, List<Person> dependents, Gender gender, Date birthDate, boolean isPregnant, List<DiseaseRecord> diseaseRecords) {
+    public Person(long cpf, String name, Person companion, List<Person> dependents, Gender gender, Date birthDate, boolean isPregnant, List<DiseaseRecord> diseaseRecords) {
         this.cpf = cpf;
         this.name = name;
         this.companion = companion;
@@ -29,17 +29,17 @@ public class Person {
         this.diseaseRecords.addAll(diseaseRecords);
     }
 
-    public Person( int cpf, String name, Gender gender, Date birthDate, boolean isPregnant, Address adress, int idSus) {
+    public Person( long cpf, String name, Gender gender, Date birthDate, boolean isPregnant, Address address, long idSus) {
         this.cpf = cpf;
         this.name = name;
         this.gender = gender;
         this.birthDate = birthDate;
         this.isPregnant = isPregnant;
-        this.address = adress;
+        this.address = address;
         this.idSus = idSus;
     }
 
-    public Person(int cpf, String name, Person companion, List<Person> dependents, Gender gender, Date birthDate, boolean isPregnant, DiseaseRecord diseaseRecord) {
+    public Person(long cpf, String name, Person companion, List<Person> dependents, Gender gender, Date birthDate, boolean isPregnant, DiseaseRecord diseaseRecord) {
         this(cpf, name, companion, dependents, gender, birthDate, isPregnant, List.of(diseaseRecord));
     }
 
@@ -57,11 +57,11 @@ public class Person {
         this.idPerson = idPerson;
     }
 
-    public int getCpf() {
+    public long getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(long cpf) {
         this.cpf = cpf;
     }
 
@@ -125,15 +125,15 @@ public class Person {
         return address;
     }
 
-    public void setAddress(Address adress) {
-        this.address = adress;
+    public void setAdress(Address adress) {
+        this.address = address;
     }
 
-    public int getIdSus() {
+    public long getIdSus() {
         return idSus;
     }
 
-    public void setIdSus(int idSus) {
+    public void setIdSus(long idSus) {
         this.idSus = idSus;
     }
 }

@@ -52,21 +52,6 @@ public class ObjectFactoryForDAO {
 
     }
 
-    public static Disease disease1(){
-        Disease disease = new Disease("Malária");
-        return disease;
-    }
-    public static Disease disease2(){
-        Disease disease = new Disease("Zika");
-        return disease;
-    }
-    public static Disease disease3(){
-        Disease disease = new Disease("Dengue");
-        return disease;
-    }
-    public static Disease disease4(){
-        Disease disease = new Disease("Microcefalia");
-        return disease;
-    }
+
 
 }

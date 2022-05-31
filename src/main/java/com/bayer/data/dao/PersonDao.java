@@ -28,11 +28,9 @@ public class PersonDao implements CRUD<Person> {
 
             Date data = new Date(person.getBirthDate().getTime());
 
-            //TODO NÃO É POSSÍVEL PASSAR O CPF INTEIRO, POIS É MAIOR QUE O PERMITIDO PELO INT
-
-            statement.setInt(4, person.getCpf());
+            statement.setLong(4, person.getCpf());
             statement.setString(5, person.getName());
-            statement.setInt(6, person.getIdSus());
+            statement.setLong(6, person.getIdSus());
             statement.setString(7, person.getGender().getShortName());
             return databaseManager.executeWriteQuery(statement);
         } catch (SQLException e) {
