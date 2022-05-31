@@ -16,7 +16,7 @@ O objetivo do projeto foi desenvolver um sistema para monitoramento da quantidad
 - HTML
 - CSS
 - JavaScript
-- Boostrap
+- Bootstrap
 - Java
 - SQL
 
