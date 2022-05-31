@@ -1,0 +1,157 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="03443383-EA4E-4CFF-6167-E673A32BBB73" name="Pessoa">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>251D6C7A-5EF8-45AB-2310-DD6ABADDD2DD</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_pessoa" id="1D2F7C76-AA78-8115-EC43-D9BB4B3C98A3">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>071BC795-B57C-4C6B-1397-AE8B1AB5AB17</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Pessoa_id_pessoa" id="B39DF424-0A9A-D0F0-9FE3-F25870A384A4">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>24C06E14-2D48-08C0-1F59-FBCDB5DBFD62</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="24B920D3-8106-0004-CB4B-DE51A7AA2BFC" referredColumn="1D2F7C76-AA78-8115-EC43-D9BB4B3C98A3"/>
+</associations>
+</Column>
+<Column name="Endereco_id_endereco" id="DC2800DE-F487-0562-38A2-4FF04E6DA2E4">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>32D82B58-0E57-17B4-B496-5658F376D7E2</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="92A5965F-2F61-A3A3-1536-64BFF01B8B6B" referredColumn="562ED184-22CE-1158-BA3B-E17F347F06E9"/>
+</associations>
+</Column>
+<Column name="cpf" id="E667D049-11F3-09C0-A087-50AD769A4A5A">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>3DC0E669-F42F-94EA-1242-351062230083</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome" id="1409F17E-F622-6F69-FDAA-D05D2494BE95">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>55C043EF-E81C-BEF7-3050-02B9889AE857</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+<ownDataTypeParameters>80,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nascimento" id="4FF077C9-C6FF-D0F4-4DC7-8B3D5190891D">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>4D08CF29-7C66-2371-5BA4-5F504EBCC7F7</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_sus" id="C704007F-FB2B-48CC-CCAC-480BF03C3F96">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>4398F427-DB51-257B-9FAF-BEE78371A6B4</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="sexo" id="E41F7627-8595-9CB7-9FD1-E8877D5514B1">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>EDDE339E-F4F7-3837-74EC-9196CD2A78F5</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="03974908-19C3-29B6-AF20-9598CC8B3BF0" name="Pessoa_PK">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>C903915D-13B8-7C9B-D55E-A70DB39AC441</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1D2F7C76-AA78-8115-EC43-D9BB4B3C98A3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="78041D79-2040-7674-435C-565BA25CA401" name="Pessoa__IDX">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>5A8818AD-35EA-7F80-EA3B-66F1403A18EB</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="B39DF424-0A9A-D0F0-9FE3-F25870A384A4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EB5C64A5-F6AC-8420-3FB6-9A58CCAA5A6F" name="Pessoa_Pessoa_FK">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>5A8818AD-35EA-7F80-EA3B-66F1403A18EB</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B39DF424-0A9A-D0F0-9FE3-F25870A384A4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9711ACEE-9A45-0982-E4F6-6EAA3B9FA828" name="Pessoa_Endereco_FK">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>F659BF66-D96A-6944-C477-5BADE1BA5AAD</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DC2800DE-F487-0562-38A2-4FF04E6DA2E4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

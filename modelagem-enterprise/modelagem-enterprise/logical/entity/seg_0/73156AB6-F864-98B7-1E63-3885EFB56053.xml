@@ -1,0 +1,111 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="73156AB6-F864-98B7-1E63-3885EFB56053" name="Endereco">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 22:40:01 UTC</createdTime>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_endereco" id="3FE66B74-547A-F0F4-495F-9C2C0A237092">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 23:42:23 UTC</createdTime>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cidade" id="86D533D5-D178-235F-7F88-7D0EAA701EF0">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 23:42:37 UTC</createdTime>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>120</dataTypeSize>
+<ownDataTypeParameters>120,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="bairro" id="8912468D-0A45-189D-607A-DA06F2DF1FFF">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 23:42:51 UTC</createdTime>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>120</dataTypeSize>
+<ownDataTypeParameters>120,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rua" id="15005974-C98C-2AE0-2D17-F7AA2AD47BD1">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 23:42:59 UTC</createdTime>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>120</dataTypeSize>
+<ownDataTypeParameters>120,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="numero" id="4C7E504A-B56C-4B33-99D5-5D3D5E94535A">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 23:43:05 UTC</createdTime>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_estado" id="8700780C-3B4F-37FC-DEC1-4C4C88DA2E9A">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 23:52:58 UTC</createdTime>
+<generatorID>1593444F-5F2F-F8DD-17CE-1F680029CD3E</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="true"/>
+</engineerTo>
+<referedAttribute>3465C2F6-62DA-D0DD-DA89-05CFB04B5D13</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="1D61E9F7-DC95-41DD-3299-D00C16C1A0F0" name="Endereco PK">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 23:42:35 UTC</createdTime>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>3FE66B74-547A-F0F4-495F-9C2C0A237092</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

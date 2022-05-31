@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="terv4" directorySegmentName="seg_0" id="F659BF66-D96A-6944-C477-5BADE1BA5AAD">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 23:55:34 UTC</createdTime>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="true"/>
+</engineerTo>
+<sourcePk>1D61E9F7-DC95-41DD-3299-D00C16C1A0F0</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>73156AB6-F864-98B7-1E63-3885EFB56053</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>251D6C7A-5EF8-45AB-2310-DD6ABADDD2DD</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

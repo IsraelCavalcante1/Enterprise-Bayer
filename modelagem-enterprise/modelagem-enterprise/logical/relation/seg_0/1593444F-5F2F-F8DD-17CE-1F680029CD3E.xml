@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="estar" directorySegmentName="seg_0" id="1593444F-5F2F-F8DD-17CE-1F680029CD3E">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 23:52:58 UTC</createdTime>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="true"/>
+</engineerTo>
+<sourcePk>F287E016-3224-73B5-05FB-7CC2A8F1B642</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>7D67D413-307D-E869-5578-23F9E9F24625</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>73156AB6-F864-98B7-1E63-3885EFB56053</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

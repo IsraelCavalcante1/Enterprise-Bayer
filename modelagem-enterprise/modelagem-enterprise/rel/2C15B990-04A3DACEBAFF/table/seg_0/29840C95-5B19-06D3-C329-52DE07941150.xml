@@ -1,0 +1,66 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="29840C95-5B19-06D3-C329-52DE07941150" name="Parentesco">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>69956119-D868-1D4D-0923-D4E39990D16A</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Pessoa_id_pessoa" id="097D89CE-1033-9C3C-A71A-DDEA8E50FF21">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>1BD878E1-1DC3-BD31-C424-9B6D191EC8E1</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DBF93EEE-0E04-2084-4818-FF895B7006AD" referredColumn="1D2F7C76-AA78-8115-EC43-D9BB4B3C98A3"/>
+</associations>
+</Column>
+<Column name="Pessoa_id_pessoa2" id="1CEC96E3-815A-F450-5CD1-0BC88579BC9C">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>465016B9-11A2-4245-0AEE-0B2CF26C6F60</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="30DA4E1A-BA19-DE7A-6F52-72CD814820B5" referredColumn="1D2F7C76-AA78-8115-EC43-D9BB4B3C98A3"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9705CBB2-B090-59C8-C81B-B32074AD276D" name="Parentesco_Pessoa_FK">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>4D7E8AFB-6B62-707A-C02C-5D7BE6946292</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="097D89CE-1033-9C3C-A71A-DDEA8E50FF21"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1E8FF7C7-B868-7E39-C7B4-76C0A017B925" name="Parentesco_Pessoa_FKv2">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>E9E6520B-0215-C55C-699F-F8BD01EE4592</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1CEC96E3-815A-F450-5CD1-0BC88579BC9C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

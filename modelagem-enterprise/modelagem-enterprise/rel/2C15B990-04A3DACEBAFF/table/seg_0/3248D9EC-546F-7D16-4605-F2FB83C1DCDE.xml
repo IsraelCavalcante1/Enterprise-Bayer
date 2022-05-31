@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3248D9EC-546F-7D16-4605-F2FB83C1DCDE" name="Doenca">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>4A332252-BA1D-FD59-5879-7EE52F2074D1</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_doenca" id="F091E001-1BF5-CA4A-6799-486815FE6423">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>43675E26-B63C-DB1C-3D6E-510754A9CDD0</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome" id="CA0A055B-391A-8080-766D-DF4EF07C9C65">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>D2420317-49CB-B05C-A695-392B680E7A94</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2DE8172E-6DF1-A311-FA42-FAB0C9BC1768" name="Doenca_PK">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>3C91D957-5402-20B7-6E15-62F252A06EC9</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F091E001-1BF5-CA4A-6799-486815FE6423"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

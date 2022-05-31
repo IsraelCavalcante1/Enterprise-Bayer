@@ -1,0 +1,110 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0E180706-09C9-8952-06C5-EA7A8003FF85" name="Endereco">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>73156AB6-F864-98B7-1E63-3885EFB56053</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_endereco" id="562ED184-22CE-1158-BA3B-E17F347F06E9">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>3FE66B74-547A-F0F4-495F-9C2C0A237092</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cidade" id="A6A1C614-D9E5-8EB9-6A31-715E8D45F82E">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>86D533D5-D178-235F-7F88-7D0EAA701EF0</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>120</dataTypeSize>
+<ownDataTypeParameters>120,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="bairro" id="F7EFF726-665B-ACAE-D119-955744E74291">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>8912468D-0A45-189D-607A-DA06F2DF1FFF</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>120</dataTypeSize>
+<ownDataTypeParameters>120,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="rua" id="320FE5A1-BEC6-15F7-A72E-95EE3DFC6295">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>15005974-C98C-2AE0-2D17-F7AA2AD47BD1</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>120</dataTypeSize>
+<ownDataTypeParameters>120,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="numero" id="1F3BEA8A-C8B8-603D-4102-E17AB9B1FEA0">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>4C7E504A-B56C-4B33-99D5-5D3D5E94535A</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Estado_id_estado" id="2811248A-9562-96BF-9C05-A110C8FF157C">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>8700780C-3B4F-37FC-DEC1-4C4C88DA2E9A</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2A1A0053-8D67-4AEE-03A4-DA20D0A54AEF" referredColumn="88359C15-948E-1422-0D7F-8302F43070AE"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="51D56A26-1087-B88F-01A1-6F8A6A710DA8" name="Endereco_PK">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>1D61E9F7-DC95-41DD-3299-D00C16C1A0F0</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="562ED184-22CE-1158-BA3B-E17F347F06E9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F0E8FD65-1C67-C966-13C7-D57E61DEF1E1" name="Endereco_Estado_FK">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-27 00:05:52 UTC</createdTime>
+<generatorID>1593444F-5F2F-F8DD-17CE-1F680029CD3E</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2811248A-9562-96BF-9C05-A110C8FF157C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

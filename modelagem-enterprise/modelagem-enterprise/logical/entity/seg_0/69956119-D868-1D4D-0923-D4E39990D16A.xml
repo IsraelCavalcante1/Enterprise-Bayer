@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="69956119-D868-1D4D-0923-D4E39990D16A" name="Parentesco">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 23:09:32 UTC</createdTime>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_pessoa" id="1BD878E1-1DC3-BD31-C424-9B6D191EC8E1">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 23:16:03 UTC</createdTime>
+<generatorID>4D7E8AFB-6B62-707A-C02C-5D7BE6946292</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="true"/>
+</engineerTo>
+<referedAttribute>071BC795-B57C-4C6B-1397-AE8B1AB5AB17</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_pessoa_filho" id="465016B9-11A2-4245-0AEE-0B2CF26C6F60">
+<createdBy>leoru</createdBy>
+<createdTime>2022-05-26 23:16:48 UTC</createdTime>
+<generatorID>E9E6520B-0215-C55C-699F-F8BD01EE4592</generatorID>
+<ownerDesignName>modelagem-enterprise</ownerDesignName>
+<engineerTo>
+<item key="2C15B990-8A3A-EB9A-162A-04A3DACEBAFF" value="true"/>
+</engineerTo>
+<referedAttribute>071BC795-B57C-4C6B-1397-AE8B1AB5AB17</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>
