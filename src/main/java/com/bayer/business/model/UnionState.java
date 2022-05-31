@@ -1,13 +1,14 @@
 package com.bayer.business.model;
 
+// Depende de região
+
 public class UnionState {
     private int id;
     private Region region;
     private String name;
     private String shortName;
 
-    public UnionState(int id, Region region, String name, String shortName) {
-        this.id = id;
+    public UnionState(Region region, String name, String shortName) {
         this.region = region;
         this.name = name;
         this.shortName = shortName;

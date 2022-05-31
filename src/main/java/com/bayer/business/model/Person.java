@@ -15,7 +15,7 @@ public class Person {
     private Date birthDate;
     private List<DiseaseRecord> diseaseRecords = new ArrayList<>();
     private boolean isPregnant;
-    private Address adress;
+    private Address address;
     private int idSus;
 
     public Person(int cpf, String name, Person companion, List<Person> dependents, Gender gender, Date birthDate, boolean isPregnant, List<DiseaseRecord> diseaseRecords) {
@@ -35,7 +35,7 @@ public class Person {
         this.gender = gender;
         this.birthDate = birthDate;
         this.isPregnant = isPregnant;
-        this.adress = adress;
+        this.address = adress;
         this.idSus = idSus;
     }
 
@@ -121,12 +121,12 @@ public class Person {
         isPregnant = pregnant;
     }
 
-    public Address getAdress() {
-        return adress;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setAdress(Address adress) {
-        this.adress = adress;
+    public void setAddress(Address adress) {
+        this.address = adress;
     }
 
     public int getIdSus() {

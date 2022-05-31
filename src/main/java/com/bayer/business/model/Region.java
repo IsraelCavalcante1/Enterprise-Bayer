@@ -1,13 +1,11 @@
 package com.bayer.business.model;
 
 public enum Region {
-
-    NORTH(1, "Norte"),
-    NORTH_EAST(2, "Nordeste"),
-    SOUTH(3, "Sul"),
-    SOUTH_EAST(4, "Sudeste"),
-    CENTER_WEST(5, "Centro-Oeste");
-
+    SOUTH(1, "Sul"),
+    SOUTH_EAST(2, "Sudeste"),
+    CENTER_WEST(3, "Centro-Oeste"),
+    NORTH_EAST(4, "Nordeste"),
+    NORTH(5, "Norte");
 
     private int id;
     private String name;

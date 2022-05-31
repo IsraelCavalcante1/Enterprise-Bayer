@@ -17,6 +17,13 @@ public class Address {
         this.number = number;
         this.state = state;
     }
+    public Address(String city, String neighborhood, String street, int number, UnionState state) {
+        this.city = city;
+        this.neighborhood = neighborhood;
+        this.street = street;
+        this.number = number;
+        this.state = state;
+    }
 
     public String getFullAddress() {
         StringBuilder sb = new StringBuilder();

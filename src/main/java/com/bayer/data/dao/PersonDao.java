@@ -12,16 +12,24 @@ public class PersonDao implements CRUD<Person> {
 
     @Override
     public int create(Person person) {
+
+        //TODO ADICIONAR NOTA DE OBSERVAÇÃO PARA CONFIGURAR O ARTIFACT
+        // TODO Como será feita a inserção de relacionamento de companheiro
+
         PreparedStatement statement;
         try {
             statement = connection.prepareStatement(
-                    "INSERT INTO T_HT_PERSON(ID_PESSOA, PESSOA_ID_PESSOA, ENDERECO_ID_ENDERECO, CPF, NOME, ID_SUS, SEXO) " +
+                    "INSERT INTO Pessoa(ID_PESSOA, PESSOA_ID_PESSOA, ENDERECO_ID_ENDERECO, CPF, NOME, ID_SUS, SEXO) " +
                             "VALUES (SQ_PESSOA.NEXTVAL, ?, ?, ?, ?,?,?,?)");
 
             statement.setInt(1, person.getIdPerson());
             statement.setInt(2, person.getCompanion().getIdPerson());
-            statement.setInt(3, person.getAdress().getId());
+            statement.setInt(3, person.getAddress().getId());
+
             Date data = new Date(person.getBirthDate().getTime());
+
+            //TODO NÃO É POSSÍVEL PASSAR O CPF INTEIRO, POIS É MAIOR QUE O PERMITIDO PELO INT
+
             statement.setInt(4, person.getCpf());
             statement.setString(5, person.getName());
             statement.setInt(6, person.getIdSus());
