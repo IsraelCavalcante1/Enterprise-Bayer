@@ -1,8 +1,6 @@
 package src.main.java.business.model;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 public class Person {
     private int cpf;
@@ -27,5 +25,10 @@ public class Person {
 
     public Person(int cpf, String name, Person companion, List<Person> dependents, Gender gender, Date birthDate, boolean isPregnant, DiseaseRecord diseaseRecord) {
         this(cpf, name, companion, dependents, gender, birthDate, isPregnant, List.of(diseaseRecord));
+    }
+
+    public int getAge() {
+        long timeDifference = Calendar.getInstance().getTime().getTime() - birthDate.getTime();
+        return new Calendar.Builder().setInstant(timeDifference).build().get(Calendar.YEAR);
     }
 }
