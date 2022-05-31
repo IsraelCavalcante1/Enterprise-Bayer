@@ -4,6 +4,7 @@ import com.bayer.business.model.Person;
 
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -14,7 +15,7 @@ public class PersonDao implements CRUD<Person> {
     public int create(Person person) {
 
         //TODO ADICIONAR NOTA DE OBSERVAÇÃO PARA CONFIGURAR O ARTIFACT
-        // TODO Como será feita a inserção de relacionamento de companheiro
+
 
         PreparedStatement statement;
         try {
@@ -68,4 +69,25 @@ public class PersonDao implements CRUD<Person> {
     public List<Person> selectAll() {
         return null;
     }
+
+    public Person findByName(String name) {
+        ResultSet resultSet;
+        try {
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM PERSON WHERE nome LIKE ?");
+            statement.setString(1, name);
+            resultSet = databaseManager.executeReadQuery(statement);
+
+            if (resultSet.next()) {
+                return new Person(
+                        resultSet.getInt("ID_PESSOA"));
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Não achou a tabela ou não conectou ao banco de dados (PersonDAO - FindByName)");
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
 }

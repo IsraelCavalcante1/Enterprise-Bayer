@@ -44,6 +44,10 @@ public class Person {
     }
 
 
+    public Person(int idPerson){
+        this.idPerson = idPerson;
+    }
+
     public int getAge() {
         long timeDifference = Calendar.getInstance().getTime().getTime() - birthDate.getTime();
         return new Calendar.Builder().setInstant(timeDifference).build().get(Calendar.YEAR);
