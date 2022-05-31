@@ -45,3 +45,13 @@
     white-space: nowrap;
     color: white;
 }
+
+.card{
+    cursor: pointer;
+}
+
+.dashboard-text{
+    margin-bottom: 1rem;
+    margin-left: -4px;
+    margin-top:0.5rem;
+}
