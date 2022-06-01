@@ -224,7 +224,6 @@
                                 <td><%=rs.getDate("DATA_REGISTRO_DOENCA")%></td>
                                 <td><%=rs.getString("NOME_DOENCA")%></td>
 
-
                             </tr>
                             <% } %>
                             </tbody>

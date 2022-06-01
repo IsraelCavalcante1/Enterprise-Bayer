@@ -15,7 +15,7 @@ public class ObjectFactoryForDAO {
     }
 
     public static Address address2(){
-        Address address = new Address("Macapá", "Km 2 Universidade","Rod. Josmar Chaves Pinto",2141, 3);
+        Address address = new Address(30, "Macapá", "Km 2 Universidade","Rod. Josmar Chaves Pinto",2141, 3);
         return address;
     }
 
