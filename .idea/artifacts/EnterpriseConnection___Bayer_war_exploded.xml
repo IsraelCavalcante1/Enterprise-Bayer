@@ -13,6 +13,9 @@
         <element id="directory" name="classes">
           <element id="module-output" name="EnterpriseConnection - Bayer" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.oracle.database.jdbc:ojdbc8:19.14.0.0" />
+        </element>
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/Bayer-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />

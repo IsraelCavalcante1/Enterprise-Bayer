@@ -14,25 +14,23 @@ public class PersonDao implements CRUD<Person> {
     @Override
     public int create(Person person) {
 
-        //TODO ADICIONAR NOTA DE OBSERVAÇÃO PARA CONFIGURAR O ARTIFACT
-
-
         PreparedStatement statement;
         try {
             statement = connection.prepareStatement(
-                    "INSERT INTO Pessoa(ID_PESSOA, PESSOA_ID_PESSOA, ENDERECO_ID_ENDERECO, CPF, NOME, ID_SUS, SEXO) " +
-                            "VALUES (SQ_PESSOA.NEXTVAL, ?, ?, ?, ?,?,?,?)");
+                    "INSERT INTO Pessoa(ID_PESSOA, ENDERECO_ID_ENDERECO, CPF, NOME, ID_SUS, SEXO, NASCIMENTO) " +
+                            "VALUES (SQ_PESSOA.NEXTVAL, ?, ?, ?,?,?,?)");
 
-            statement.setInt(1, person.getIdPerson());
-            statement.setInt(2, person.getCompanion().getIdPerson());
-            statement.setInt(3, person.getAddress().getId());
+
+            statement.setInt(1, person.getAddress().getId());
 
             Date data = new Date(person.getBirthDate().getTime());
 
-            statement.setLong(4, person.getCpf());
-            statement.setString(5, person.getName());
-            statement.setLong(6, person.getIdSus());
-            statement.setString(7, person.getGender().getShortName());
+            statement.setLong(2, person.getCpf());
+            statement.setString(3, person.getName());
+            statement.setLong(4, person.getIdSus());
+            statement.setString(5, person.getGender().getShortName());
+            statement.setDate(6, data);
+
             return databaseManager.executeWriteQuery(statement);
         } catch (SQLException e) {
             System.out.println("Não achou a tabela ou não conectou ao banco de dados (PERSONDAO)");
@@ -42,6 +40,20 @@ public class PersonDao implements CRUD<Person> {
 
     @Override
     public int update(Person person) {
+        return 0;
+    }
+
+    public int updateCompanion(Person person) {
+        PreparedStatement statement;
+        try {
+            statement = connection.prepareStatement(
+                    "UPDATE PESSOA " + "SET PESSOA_ID_PESSOA = ? WHERE ID_PESSOA = ?");
+            statement.setInt(1, person.getCompanion().getIdPerson());
+            statement.setInt(2, person.getIdPerson());
+            return databaseManager.executeWriteQuery(statement);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return 0;
     }
 
@@ -70,11 +82,11 @@ public class PersonDao implements CRUD<Person> {
         return null;
     }
 
-    public Person findByName(String name) {
+    public Person findByCpf(long cpf) {
         ResultSet resultSet;
         try {
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM PERSON WHERE nome LIKE ?");
-            statement.setString(1, name);
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM PESSOA WHERE cpf LIKE ?");
+            statement.setLong(1, cpf);
             resultSet = databaseManager.executeReadQuery(statement);
 
             if (resultSet.next()) {

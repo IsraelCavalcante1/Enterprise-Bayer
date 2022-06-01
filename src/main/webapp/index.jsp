@@ -81,9 +81,7 @@
             </div>
         </nav>
     </div>
-    <%
-        PersonServlet
-    %>
+
     <div id="layoutSidenav_content">
         <main>
             <!-- Conteúdo-->

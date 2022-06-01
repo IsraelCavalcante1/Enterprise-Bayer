@@ -18,16 +18,16 @@ public class Person {
     private Address address;
     private long idSus;
 
-    public Person(long cpf, String name, Person companion, List<Person> dependents, Gender gender, Date birthDate, boolean isPregnant, List<DiseaseRecord> diseaseRecords) {
-        this.cpf = cpf;
-        this.name = name;
-        this.companion = companion;
-        this.dependents = dependents;
-        this.gender = gender;
-        this.birthDate = birthDate;
-        this.isPregnant = isPregnant;
-        this.diseaseRecords.addAll(diseaseRecords);
-    }
+//    public Person(long cpf, String name, Person companion, List<Person> dependents, Gender gender, Date birthDate, boolean isPregnant, List<DiseaseRecord> diseaseRecords) {
+//        this.cpf = cpf;
+//        this.name = name;
+//        this.companion = companion;
+//        this.dependents = dependents;
+//        this.gender = gender;
+//        this.birthDate = birthDate;
+//        this.isPregnant = isPregnant;
+//        this.diseaseRecords.addAll(diseaseRecords);
+//    }
 
     public Person( long cpf, String name, Gender gender, Date birthDate, boolean isPregnant, Address address, long idSus) {
         this.cpf = cpf;
@@ -39,9 +39,9 @@ public class Person {
         this.idSus = idSus;
     }
 
-    public Person(long cpf, String name, Person companion, List<Person> dependents, Gender gender, Date birthDate, boolean isPregnant, DiseaseRecord diseaseRecord) {
-        this(cpf, name, companion, dependents, gender, birthDate, isPregnant, List.of(diseaseRecord));
-    }
+//    public Person(long cpf, String name, Person companion, List<Person> dependents, Gender gender, Date birthDate, boolean isPregnant, DiseaseRecord diseaseRecord) {
+//        this(cpf, name, companion, dependents, gender, birthDate, isPregnant, List.of(diseaseRecord));
+//    }
 
 
     public Person(int idPerson){
