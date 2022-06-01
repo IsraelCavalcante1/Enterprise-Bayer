@@ -1,6 +1,16 @@
 <%@ page import="com.bayer.business.model.Person" %>
 <%@ page import="com.bayer.data.network.PersonServlet" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page import="static com.bayer.data.dao.CRUD.connection" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.sql.Statement" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.SQLException" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.util.Calendar" %>
+<%@ page import="java.util.GregorianCalendar" %>
 <!DOCTYPE html>
 <html lang="pt-Br">
 
@@ -13,7 +23,19 @@
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
     <link href="./resources/css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <%! ResultSet rs;%>
+    <%! int idade;%>
+    <%
+        Statement statement;
+        try {
+            statement = connection.createStatement();
+            rs = statement.executeQuery("SELECT h.endereco_id_endereco,h.id_pessoa,h.cpf,h.pessoa_id_pessoa,h.nascimento,h.nome,h.id_sus, h.sexo,j.regiao_id_regiao,i.nome_regiao,g.estado_id_estado,l.id_registro,l.pessoa_id_pessoa,l.doenca_id_doenca, l.data_registro_doenca,k.id_doenca,k.nome_doenca FROM pessoa h,endereco g,estado j,regiao i, doenca_registro l,doenca k WHERE g.id_endereco = h.endereco_id_endereco AND i.id_regiao = j.regiao_id_regiao AND j.id_estado = g.estado_id_estado AND k.id_doenca = l.doenca_id_doenca AND h.id_pessoa = l.pessoa_id_pessoa");
+            System.out.println(rs);
 
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    %>
 </head>
 
 <body class="sb-nav-fixed">
@@ -163,327 +185,48 @@
                             <tr>
                                 <th>Nome</th>
                                 <th>Região</th>
-                                <th>Estado civil</th>
+                                <th>Estado Civil</th>
                                 <th>Idade</th>
-                                <th>Registro da enfermidade</th>
+                                <th>Registro de Enfermidade</th>
                                 <th>Enfermidade</th>
                             </tr>
+
                             </thead>
-                            <tfoot>
+                            <% while (rs.next()) { %>
+                            <tr>
+                                <td><%= rs.getString("NOME") %></td>
 
-                            </tfoot>
-                            <tbody>
-                            <tr>
-                                <!-- // nome -->
-                                <td>Julia Silva</td>
-                                <!-- Nome Região -->
-                                <td>Centro Oeste</td>
-                                <!-- Estado Civil -->
-                                <td>Solteira</td>
-                                <!-- Idade -->
-                                <td>21</td>
-                                <!-- Data da Enfermidade -->
-                                <td>22/10/2000</td>
-                                <!-- Nome Enfermidade -->
-                                <td>Zika</td>
-                            </tr>
-                            <tr>
-                                <td>Vilma Regina</td>
-                                <td>Sudeste</td>
-                                <td>Casada</td>
-                                <td>29</td>
-                                <td>10/05/2016</td>
-                                <td>Malária</td>
-                            </tr>
-                            <tr>
-                                <td>Milton Cox</td>
-                                <td>Sul</td>
-                                <td>Casado</td>
-                                <td>66</td>
-                                <td>08/02/2022</td>
-                                <td>Dengue</td>
-                            </tr>
-                            <tr>
-                                <td>Kelly Rodrigues</td>
-                                <td>Nordeste</td>
-                                <td>Solteira</td>
-                                <td>39</td>
-                                <td>08/10/2015</td>
-                                <td>Zika</td>
-                            </tr>
-                            <tr>
-                                <td>Airi Sasaki</td>
-                                <td>Sul</td>
-                                <td>Casado</td>
-                                <td>28</td>
-                                <td>04/11/2010</td>
-                                <td>Dengue</td>
-                            </tr>
-                            <tr>
-                                <td>Brielle Ofnner</td>
-                                <td>Norte</td>
-                                <td>Solteira</td>
-                                <td>22</td>
-                                <td>07/12/2010</td>
-                                <td>Malária</td>
-                            </tr>
-                            <tr>
-                                <td>Maria Chand</td>
-                                <td>Centro Oeste</td>
-                                <td>Casada</td>
-                                <td>31</td>
-                                <td>07/12/2010</td>
-                                <td>Zika</td>
-                            </tr>
-                            <tr>
-                                <td>Junior Rodrigues</td>
-                                <td>Nordeste</td>
-                                <td>Solteiro</td>
-                                <td>1</td>
-                                <td>11/20/2022</td>
-                                <td>Microcefalia</td>
-                            </tr>
-                            <tr>
-                                <td>Clovis De Lucas</td>
-                                <td>Sudeste</td>
-                                <td>Solteiro</td>
-                                <td>39</td>
-                                <td>22/06/2012</td>
-                                <td>Zika</td>
-                            </tr>
-                            <tr>
-                                <td>Sonya Vanessa</td>
-                                <td>Centro-Oeste</td>
-                                <td>Casada</td>
-                                <td>23</td>
-                                <td>30/05/2005</td>
-                                <td>Malária</td>
-                            </tr>
-                            <tr>
-                                <td>Jena Gaines</td>
-                                <td>Centro-Oeste</td>
-                                <td>Solteira</td>
-                                <td>30</td>
-                                <td>20/10/2020</td>
-                                <td>Dengue</td>
-                            </tr>
-                            <tr>
-                                <td>Mazuel Flynn</td>
-                                <td>Nordeste</td>
-                                <td>Solteiro</td>
-                                <td>22</td>
-                                <td>02/05/2021</td>
-                                <td>Malária</td>
-                            </tr>
-                            <tr>
-                                <td>Daiane Mendes</td>
-                                <td>Centro-Oeste</td>
-                                <td>Casado</td>
-                                <td>36</td>
-                                <td>01/10/2002</td>
-                                <td>Malária</td>
-                            </tr>
-                            <tr>
-                                <td>João Amazonas</td>
-                                <td>Norte</td>
-                                <td>Casado</td>
-                                <td>43</td>
-                                <td>10/10/2008</td>
-                                <td>Dengue</td>
-                            </tr>
-                            <tr>
-                                <td>Tatyana Fitzpatrick</td>
-                                <td>Centro-Oeste</td>
-                                <td>Solteiro</td>
-                                <td>19</td>
-                                <td>2010/03/17</td>
-                                <td>Malária</td>
-                            </tr>
-                            <tr>
-                                <td>Michael Silva</td>
-                                <td>Sul</td>
-                                <td>Casado</td>
-                                <td>66</td>
-                                <td>20/10/2019</td>
-                                <td>Dengue</td>
-                            </tr>
-                            <tr>
-                                <td>Paulo Domingues </td>
-                                <td>Centro-Oeste</td>
-                                <td>Casado</td>
-                                <td>64</td>
-                                <td>10/05/2016</td>
-                                <td>Dengue</td>
-                            </tr>
-                            <tr>
-                                <td>Gloria Marta</td>
-                                <td>Sul</td>
-                                <td>Solteira</td>
-                                <td>59</td>
-                                <td>29/05/2009</td>
-                                <td>Zika</td>
-                            </tr>
-                            <tr>
-                                <td>Matilde Ferreira</td>
-                                <td>Nordeste</td>
-                                <td>Solteira</td>
-                                <td>41</td>
-                                <td>21/022012</td>
-                                <td>Zika</td>
-                            </tr>
-                            <tr>
-                                <td>Dai Rios</td>
-                                <td>Centro-Oeste</td>
-                                <td>Casada</td>
-                                <td>34</td>
-                                <td>26/06/2012</td>
-                                <td>Malária</td>
-                            </tr>
-                            <tr>
-                                <td>Vanessa Rios</td>
-                                <td>Centro-Oeste</td>
-                                <td>Solteira</td>
-                                <td>2</td>
-                                <td>09/03/2021</td>
-                                <td>Microcefalia</td>
-                            </tr>
-                            <tr>
-                                <td>Yuri Berry</td>
-                                <td>Sul</td>
-                                <td>Casado</td>
-                                <td>40</td>
-                                <td>21/20/2009</td>
-                                <td>Dengue</td>
-                            </tr>
-                            <tr>
-                                <td>Caesar Vance</td>
-                                <td>Nordeste</td>
-                                <td>Solteiro</td>
-                                <td>21</td>
-                                <td>19/22/2021</td>
-                                <td>Dengue</td>
-                            </tr>
-                            <tr>
-                                <td>Doris Veneza</td>
-                                <td>Nordeste</td>
-                                <td>Solteira</td>
-                                <td>22</td>
-                                <td>10/10/2016</td>
-                                <td>Zika</td>
-                            </tr>
-                            <tr>
-                                <td>Angelica Ramos</td>
-                                <td>Nordeste</td>
-                                <td>Casada</td>
-                                <td>47</td>
-                                <td>09/10/2019</td>
-                                <td>Zika</td>
-                            </tr>
-                            <tr>
-                                <td>Joyce Silva</td>
-                                <td>Sudeste</td>
-                                <td>Solteira</td>
-                                <td>42</td>
-                                <td>22/10/2016</td>
-                                <td>Zika</td>
-                            </tr>
-                            <tr>
-                                <td>Jennifer Manata</td>
-                                <td>Sudeste</td>
-                                <td>Casada</td>
-                                <td>28</td>
-                                <td>14/10/2018</td>
-                                <td>Malária</td>
-                            </tr>
-                            <tr>
-                                <td>Mauro Rodigues</td>
-                                <td>Sudeste</td>
-                                <td>Casado</td>
-                                <td>28</td>
-                                <td>12/11/2018</td>
-                                <td>Dengue</td>
-                            </tr>
-                            <tr>
-                                <td>Rogério Mendes</td>
-                                <td>Sul</td>
-                                <td>Casado</td>
-                                <td>29</td>
-                                <td>8/03/2017</td>
-                                <td>Malária</td>
-                            </tr>
-                            <tr>
-                                <td>Junior Menezes</td>
-                                <td>Norte</td>
-                                <td>Casado</td>
-                                <td>28</td>
-                                <td>19/10/2016</td>
-                                <td>Zika</td>
-                            </tr>
-                            <tr>
-                                <td>Vitor Manata</td>
-                                <td>Sudeste</td>
-                                <td>Solteiro</td>
-                                <td>81</td>
-                                <td>12/12/2020</td>
-                                <td>Malária</td>
-                            </tr>
-                            <tr>
-                                <td>Alex Dantas</td>
-                                <td>Norte</td>
-                                <td>Casado</td>
-                                <td>21</td>
-                                <td>09/02/2018</td>
-                                <td>Malária</td>
-                            </tr>
-                            <tr>
-                                <td>Matheus Matson</td>
-                                <td>Norte</td>
-                                <td>Solteiro</td>
-                                <td>21</td>
-                                <td>13/10/2014</td>
-                                <td>Dengue</td>
-                            </tr>
-                            <tr>
-                                <td>Vilcker Andrade</td>
-                                <td>Sudeste</td>
-                                <td>Casado</td>
-                                <td>69</td>
-                                <td>16/03/2016</td>
-                                <td>Malária</td>
-                            </tr>
-                            <tr>
-                                <td>Marta Vasconcelos</td>
-                                <td>Norte</td>
-                                <td>Solteira</td>
-                                <td>46</td>
-                                <td>09/10/2014</td>
-                                <td>Zika</td>
-                            </tr>
-                            <tr>
-                                <td>Nayara Guimarães</td>
-                                <td>Sul</td>
-                                <td>Solteira</td>
-                                <td>23</td>
-                                <td>21/07/2013</td>
-                                <td>Dengue</td>
-                            </tr>
-                            <tr>
-                                <td>Diogo Fernandes</td>
-                                <td>Sudeste</td>
-                                <td>Casado</td>
-                                <td>51</td>
-                                <td>15/01/2017</td>
-                                <td>Dengue</td>
-                            </tr>
-                            <tr>
-                                <td>Juliana Guerra</td>
-                                <td>Nordeste</td>
-                                <td>Solteira</td>
-                                <td>37</td>
-                                <td>17/05/2015</td>
-                                <td>Malária</td>
-                            </tr>
 
+                                <td><%= rs.getString("NOME_REGIAO") %></td>
+
+                                <td><% if (rs.getString("PESSOA_ID_PESSOA") != null) {%>
+                                    <%= "Casado" %>
+                                    <%} else if (rs.getString("PESSOA_ID_PESSOA") == null){%>
+                                    <%= "Solteira" %>
+                                    <%}%></td>
+                                <%--Lógica para pegar a idade--%>
+
+                                <%
+                                    Date dataNascimento = rs.getDate("NASCIMENTO");
+                                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy");
+                                    String dataFormatadaString = simpleDateFormat.format(dataNascimento);
+                                    Integer dataFormatadaInt = Integer.parseInt(dataFormatadaString);
+                                    Date date = new Date();
+                                    Calendar calendar = new GregorianCalendar();
+                                    calendar.setTime(date);
+                                    int year = calendar.get(Calendar.YEAR);
+                                    idade =  year - dataFormatadaInt;
+                                    System.out.println(idade);
+                                %>
+
+                                <td><%=idade%></td>
+
+                                <td><%=rs.getDate("DATA_REGISTRO_DOENCA")%></td>
+                                <td><%=rs.getString("NOME_DOENCA")%></td>
+
+
+                            </tr>
+                            <% } %>
                             </tbody>
                         </table>
                     </div>
