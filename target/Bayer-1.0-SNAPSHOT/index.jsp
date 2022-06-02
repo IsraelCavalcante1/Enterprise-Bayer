@@ -29,7 +29,15 @@
         Statement statement;
         try {
             statement = connection.createStatement();
-            rs = statement.executeQuery("SELECT h.endereco_id_endereco,h.id_pessoa,h.cpf,h.pessoa_id_pessoa,h.nascimento,h.nome,h.id_sus, h.sexo,j.regiao_id_regiao,i.nome_regiao,g.estado_id_estado,l.id_registro,l.pessoa_id_pessoa,l.doenca_id_doenca, l.data_registro_doenca,k.id_doenca,k.nome_doenca FROM pessoa h,endereco g,estado j,regiao i, doenca_registro l,doenca k WHERE g.id_endereco = h.endereco_id_endereco AND i.id_regiao = j.regiao_id_regiao AND j.id_estado = g.estado_id_estado AND k.id_doenca = l.doenca_id_doenca AND h.id_pessoa = l.pessoa_id_pessoa");
+            rs = statement.executeQuery("SELECT h.endereco_id_endereco,h.id_pessoa,h.cpf,h.pessoa_id_pessoa,h.nascimento," +
+                    "h.nome,h.id_sus, h.sexo,j.regiao_id_regiao,i.nome_regiao,g.estado_id_estado,l.id_registro,l.pessoa_id_pessoa," +
+                    "l.doenca_id_doenca, l.data_registro_doenca,k.id_doenca,k.nome_doenca " +
+                    "FROM pessoa h,endereco g,estado j,regiao i, doenca_registro l,doenca k " +
+                    "WHERE g.id_endereco = h.endereco_id_endereco " +
+                    "AND i.id_regiao = j.regiao_id_regiao " +
+                    "AND j.id_estado = g.estado_id_estado " +
+                    "AND k.id_doenca = l.doenca_id_doenca " +
+                    "AND h.id_pessoa = l.pessoa_id_pessoa");
             System.out.println(rs);
 
         } catch (SQLException e) {

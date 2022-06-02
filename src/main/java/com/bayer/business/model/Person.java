@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Person {
-    private int idPerson;
+    private long idPerson;
     private long cpf;
     private String name;
     private Person companion;
@@ -29,7 +29,8 @@ public class Person {
 //        this.diseaseRecords.addAll(diseaseRecords);
 //    }
 
-    public Person( long cpf, String name, Gender gender, Date birthDate, boolean isPregnant, Address address, long idSus) {
+    public Person(long idPerson, long cpf, String name, Gender gender, Date birthDate, boolean isPregnant, Address address, long idSus) {
+        this.idPerson = idPerson;
         this.cpf = cpf;
         this.name = name;
         this.gender = gender;
@@ -44,7 +45,7 @@ public class Person {
 //    }
 
 
-    public Person(int idPerson){
+    public Person(int idPerson) {
         this.idPerson = idPerson;
     }
 
@@ -53,7 +54,7 @@ public class Person {
         return new Calendar.Builder().setInstant(timeDifference).build().get(Calendar.YEAR);
     }
 
-    public int getIdPerson() {
+    public long getIdPerson() {
         return idPerson;
     }
 
@@ -139,6 +140,31 @@ public class Person {
 
     public void setIdSus(long idSus) {
         this.idSus = idSus;
+    }
+
+    public String getCivilState() {
+        if (companion == null) {
+            return gender == Gender.MALE ? "Casado" : "Casada";
+        } else {
+            return gender == Gender.MALE ? "Solteiro" : "Solteira";
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "idPerson=" + idPerson +
+                ", cpf=" + cpf +
+                ", name='" + name + '\'' +
+                ", companion=" + companion +
+                ", dependents=" + dependents +
+                ", gender=" + gender +
+                ", birthDate=" + birthDate +
+                ", diseaseRecords=" + diseaseRecords +
+                ", isPregnant=" + isPregnant +
+                ", address=" + address +
+                ", idSus=" + idSus +
+                '}';
     }
 }
 

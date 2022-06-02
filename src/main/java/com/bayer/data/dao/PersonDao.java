@@ -48,8 +48,8 @@ public class PersonDao implements CRUD<Person> {
         try {
             statement = connection.prepareStatement(
                     "UPDATE PESSOA " + "SET PESSOA_ID_PESSOA = ? WHERE ID_PESSOA = ?");
-            statement.setInt(1, person.getCompanion().getIdPerson());
-            statement.setInt(2, person.getIdPerson());
+            statement.setLong(1, person.getCompanion().getIdPerson());
+            statement.setLong(2, person.getIdPerson());
             return databaseManager.executeWriteQuery(statement);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -105,10 +105,11 @@ public class PersonDao implements CRUD<Person> {
 
         return new Person(
                 resultSet.getLong("ID_PESSOA"),
+                resultSet.getLong("CPF"),
                 resultSet.getString("NOME"),
-                Gender.valueOf(resultSet.getString("SEXO")),
+                Gender.getGender(resultSet.getString("SEXO")),
                 resultSet.getDate("NASCIMENTO"),
-                false, //resultSet.getBoolean(""),
+                resultSet.getInt("ISPREGNANT") != 0,
                 address,
                 resultSet.getLong("ID_SUS"));
     }
@@ -122,13 +123,14 @@ public class PersonDao implements CRUD<Person> {
                 resultSet.getInt("NUMERO"),
                 resultSet.getInt("ESTADO_ID_ESTADO"));
     }
-//TODO: FIX JOIN QUERY
+
+    //TODO: FIX JOIN QUERY
     private ResultSet doSelectQuery() throws SQLException {
         PreparedStatement statement;
         statement = connection.prepareStatement(
-                "SELECT h.endereco_id_endereco,h.id_pessoa,h.cpf,h.pessoa_id_pessoa,h.nascimento, h.nome,h.id_sus, h.sexo," +
+                "SELECT h.endereco_id_endereco,h.id_pessoa,h.cpf,h.pessoa_id_pessoa,h.nascimento, h.nome,h.id_sus, h.sexo, h.ispregnant," +
                         "j.regiao_id_regiao,i.nome_regiao," +
-                        "g.estado_id_estado," +
+                        "g.estado_id_estado,g.cidade, g.bairro, g.rua, g.numero," +
                         "l.id_registro,l.pessoa_id_pessoa,l.doenca_id_doenca, l.data_registro_doenca," +
                         "k.id_doenca,k.nome_doenca " +
                         "FROM pessoa h,endereco g,estado j,regiao i, doenca_registro l,doenca k " +

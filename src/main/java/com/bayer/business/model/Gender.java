@@ -2,7 +2,8 @@ package com.bayer.business.model;
 
 public enum Gender {
     MALE("M", "Masculino"),
-    FEMALE("F", "Feminino");
+    FEMALE("F", "Feminino"),
+    UNKNOWN("X", "Desconhecido");
 
     String shortName;
     String fullName;
@@ -12,8 +13,18 @@ public enum Gender {
         this.fullName = fullName;
     }
 
-
-    public String getShortName(){
+    public String getShortName() {
         return shortName;
+    }
+
+    public static Gender getGender(String genderShortName) {
+        switch (genderShortName) {
+            case "M":
+                return MALE;
+            case "F":
+                return FEMALE;
+            default:
+                return UNKNOWN;
+        }
     }
 }

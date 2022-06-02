@@ -49,4 +49,14 @@ public class DiseaseRecord {
     public void setDisease(Disease disease) {
         this.disease = disease;
     }
+
+    @Override
+    public String toString() {
+        return "DiseaseRecord{" +
+                "id=" + id +
+                ", date=" + date +
+                ", person=" + person +
+                ", disease=" + disease +
+                '}';
+    }
 }

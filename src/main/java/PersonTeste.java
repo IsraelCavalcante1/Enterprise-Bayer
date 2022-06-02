@@ -33,7 +33,7 @@ public class PersonTeste {
 //        personDao.updateCompanion(personTeste);
 
         for (Person p : personDao.selectAll()) {
-            System.out.println(p);
+            System.out.println(p.toString());
         }
 
     }
