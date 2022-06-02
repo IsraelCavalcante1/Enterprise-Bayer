@@ -17,14 +17,18 @@ public class PersonTeste {
 //                new GregorianCalendar(1995 ,6,15).getTime(),
 //                false, address1(), 9833898);
 //
+//
+//        Person personTeste = personDao.findByCpf(34117815832L);
+//        Person personTeste2 = personDao.findByCpf(54117815822L);
+//
+//        personTeste.setCompanion(personTeste2);
+//        personTeste2.setCompanion(personTeste);
+//
+//        personDao.updateCompanion(personTeste2);
+//        personDao.updateCompanion(personTeste);
 
-        Person personTeste = personDao.findByCpf(34117815832L);
-        Person personTeste2 = personDao.findByCpf(54117815822L);
-
-        personTeste.setCompanion(personTeste2);
-        personTeste2.setCompanion(personTeste);
-
-        personDao.updateCompanion(personTeste2);
-        personDao.updateCompanion(personTeste);
+        for (Person p : personDao.selectAll()) {
+            System.out.println(p);
+        }
     }
 }

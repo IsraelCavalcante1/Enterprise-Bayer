@@ -1,25 +1,25 @@
 package com.bayer.data.dao;
 
+import com.bayer.business.model.Address;
+import com.bayer.business.model.Gender;
 import com.bayer.business.model.Person;
 
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 public class PersonDao implements CRUD<Person> {
-
 
     @Override
     public int create(Person person) {
 
         PreparedStatement statement;
+
         try {
             statement = connection.prepareStatement(
                     "INSERT INTO Pessoa(ID_PESSOA, ENDERECO_ID_ENDERECO, CPF, NOME, ID_SUS, SEXO, NASCIMENTO) " +
                             "VALUES (SQ_PESSOA.NEXTVAL, ?, ?, ?,?,?,?)");
-
 
             statement.setInt(1, person.getAddress().getId());
 
@@ -79,7 +79,66 @@ public class PersonDao implements CRUD<Person> {
 
     @Override
     public List<Person> selectAll() {
-        return null;
+        ResultSet resultSet;
+        List<Person> personList = new ArrayList<>();
+
+        try {
+            resultSet = doSelectQuery();
+
+            ResultSetMetaData metadata = resultSet.getMetaData();
+            int count = metadata.getColumnCount();
+            for (int i = 1; i <= count; i++) {
+                System.out.println(metadata.getColumnName(i));
+            }
+
+            while (resultSet.next()) {
+                personList.add(createPersonFromResult(resultSet));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return personList;
+    }
+
+    private Person createPersonFromResult(ResultSet resultSet) throws SQLException {
+        Address address = createAddressFromResult(resultSet);
+
+        return new Person(
+                resultSet.getLong("ID_PESSOA"),
+                resultSet.getString("NOME"),
+                Gender.valueOf(resultSet.getString("SEXO")),
+                resultSet.getDate("NASCIMENTO"),
+                false, //resultSet.getBoolean(""),
+                address,
+                resultSet.getLong("ID_SUS"));
+    }
+
+    private Address createAddressFromResult(ResultSet resultSet) throws SQLException {
+        return new Address(
+                resultSet.getInt("ENDERECO_ID_ENDERECO"),
+                resultSet.getString("CIDADE"),
+                resultSet.getString("BAIRRO"),
+                resultSet.getString("RUA"),
+                resultSet.getInt("NUMERO"),
+                resultSet.getInt("ESTADO_ID_ESTADO"));
+    }
+//TODO: FIX JOIN QUERY
+    private ResultSet doSelectQuery() throws SQLException {
+        PreparedStatement statement;
+        statement = connection.prepareStatement(
+                "SELECT h.endereco_id_endereco,h.id_pessoa,h.cpf,h.pessoa_id_pessoa,h.nascimento, h.nome,h.id_sus, h.sexo," +
+                        "j.regiao_id_regiao,i.nome_regiao," +
+                        "g.estado_id_estado," +
+                        "l.id_registro,l.pessoa_id_pessoa,l.doenca_id_doenca, l.data_registro_doenca," +
+                        "k.id_doenca,k.nome_doenca " +
+                        "FROM pessoa h,endereco g,estado j,regiao i, doenca_registro l,doenca k " +
+                        "WHERE g.id_endereco = h.endereco_id_endereco " +
+                        "AND i.id_regiao = j.regiao_id_regiao " +
+                        "AND j.id_estado = g.estado_id_estado " +
+                        "AND k.id_doenca = l.doenca_id_doenca " +
+                        "AND h.id_pessoa = l.pessoa_id_pessoa");
+
+        return databaseManager.executeReadQuery(statement);
     }
 
     public Person findByCpf(long cpf) {
@@ -101,5 +160,4 @@ public class PersonDao implements CRUD<Person> {
 
         return null;
     }
-
 }
