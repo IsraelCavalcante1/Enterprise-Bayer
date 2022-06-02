@@ -1,8 +1,13 @@
 import com.bayer.business.model.Address;
+import com.bayer.business.model.Gender;
 import com.bayer.business.model.Person;
+import com.bayer.data.dao.AddressDAO;
 import com.bayer.data.dao.PersonDao;
 
+import java.util.GregorianCalendar;
+
 import static com.bayer.data.dao.ObjectFactoryForDAO.address1;
+import static com.bayer.data.dao.ObjectFactoryForDAO.address2;
 
 public class PersonTeste {
     public static void main(String[] args) {
@@ -30,5 +35,6 @@ public class PersonTeste {
         for (Person p : personDao.selectAll()) {
             System.out.println(p);
         }
+
     }
 }
