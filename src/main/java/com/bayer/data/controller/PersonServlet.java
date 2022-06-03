@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet
+@WebServlet (name = "dashboard", value="/dashboard.jsp")
 public class PersonServlet extends HttpServlet {
 
     private PersonDao personDao;

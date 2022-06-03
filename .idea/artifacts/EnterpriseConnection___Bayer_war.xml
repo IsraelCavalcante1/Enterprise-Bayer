@@ -8,7 +8,7 @@
       </options>
     </properties>
     <root id="archive" name="Bayer-1.0-SNAPSHOT.war">
-      <element id="artifact" artifact-name="EnterpriseConnection - Bayer:war exploded" />
+      <element id="artifact" artifact-name="EnterpriseBayer" />
     </root>
   </artifact>
 </component>
