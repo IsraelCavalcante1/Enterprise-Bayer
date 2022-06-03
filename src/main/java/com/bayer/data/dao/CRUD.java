@@ -18,7 +18,7 @@ public interface CRUD<T> {
 
     int delete(T t);
 
-    T findById(int id);
+    T findById(long id);
 
     List<T> selectAll();
 

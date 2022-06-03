@@ -56,7 +56,7 @@ public class DiseaseRecordDao implements CRUD<DiseaseRecord> {
     }
 
     @Override
-    public DiseaseRecord findById(int id) {
+    public DiseaseRecord findById(long id) {
         return null;
     }
 

@@ -50,7 +50,7 @@ public class UnionStateDAO implements CRUD<UnionState>{
     }
 
     @Override
-    public UnionState findById(int id) {
+    public UnionState findById(long id) {
         return null;
     }
 

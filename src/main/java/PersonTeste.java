@@ -39,6 +39,7 @@ public class PersonTeste {
         for (Person p : personDao.selectAll()) {
             List<DiseaseRecord> records = diseaseRecordDao.findRecordsByPersonId(p.getIdPerson());
             p.setDiseaseRecords(records);
+            p.setCompanion(personDao.findCompanionById(p.getIdPerson()));
             System.out.println(p);
         }
 

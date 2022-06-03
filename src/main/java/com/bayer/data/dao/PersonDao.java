@@ -73,7 +73,7 @@ public class PersonDao implements CRUD<Person> {
     }
 
     @Override
-    public Person findById(int id) {
+    public Person findById(long id) {
         ResultSet resultSet;
         try {
             PreparedStatement statement = connection.prepareStatement("SELECT * FROM PESSOA WHERE ID_PESSOA = ?");
@@ -167,6 +167,25 @@ public class PersonDao implements CRUD<Person> {
             if (resultSet.next()) {
                 return new Person(
                         resultSet.getInt("ID_PESSOA"));
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Não achou a tabela ou não conectou ao banco de dados (PersonDAO - FindByName)");
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public Person findCompanionById(long idPerson) {
+        ResultSet resultSet;
+        try {
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM PESSOA WHERE PESSOA_ID_PESSOA = ?");
+            statement.setLong(1, idPerson);
+            resultSet = databaseManager.executeReadQuery(statement);
+
+            if (resultSet.next()) {
+                return createPersonFromResult(resultSet);
             }
 
         } catch (SQLException e) {

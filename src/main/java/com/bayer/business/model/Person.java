@@ -150,5 +150,10 @@ public class Person {
                 ", idSus=" + idSus +
                 '}';
     }
+
+    public long getCompanionId() {
+        if (companion != null) return companion.getIdPerson();
+        return 0;
+    }
 }
 

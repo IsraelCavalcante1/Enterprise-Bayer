@@ -53,7 +53,7 @@ public class AddressDAO implements CRUD<Address>{
     }
 
     @Override
-    public Address findById(int id) {
+    public Address findById(long id) {
         return null;
     }
 
