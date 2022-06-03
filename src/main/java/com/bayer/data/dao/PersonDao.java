@@ -81,7 +81,9 @@ public class PersonDao implements CRUD<Person> {
             resultSet = databaseManager.executeReadQuery(statement);
 
             if (resultSet.next()) {
-                return createPersonFromResult(resultSet);
+                Person p = createPersonFromResult(resultSet);
+                statement.close();
+                return p;
             }
 
         } catch (SQLException e) {
@@ -100,12 +102,6 @@ public class PersonDao implements CRUD<Person> {
         try {
             resultSet = doSelectQuery();
 
-            ResultSetMetaData metadata = resultSet.getMetaData();
-            int count = metadata.getColumnCount();
-            for (int i = 1; i <= count; i++) {
-                System.out.println(metadata.getColumnName(i));
-            }
-
             while (resultSet.next()) {
                 Person person = createPersonFromResult(resultSet);
                 person.setAddress(createAddressFromResult(resultSet));
@@ -114,6 +110,7 @@ public class PersonDao implements CRUD<Person> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return personList;
     }
 
@@ -154,7 +151,8 @@ public class PersonDao implements CRUD<Person> {
                         "AND k.id_doenca = l.doenca_id_doenca " +
                         "AND h.id_pessoa = l.pessoa_id_pessoa");
 
-        return databaseManager.executeReadQuery(statement);
+        ResultSet resultSet = databaseManager.executeReadQuery(statement);
+        return resultSet;
     }
 
     public Person findByCpf(long cpf) {

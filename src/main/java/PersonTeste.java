@@ -43,9 +43,8 @@ public class PersonTeste {
             System.out.println(p);
         }
 
-        for (DiseaseRecord record : diseaseRecordDao.selectAll()) {
-            System.out.println(record.toString());
-        }
-
+//        for (DiseaseRecord record : diseaseRecordDao.selectAll()) {
+//            System.out.println(record.toString());
+//        }
     }
 }
