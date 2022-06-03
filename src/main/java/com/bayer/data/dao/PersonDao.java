@@ -74,6 +74,21 @@ public class PersonDao implements CRUD<Person> {
 
     @Override
     public Person findById(int id) {
+        ResultSet resultSet;
+        try {
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM PESSOA WHERE ID_PESSOA = ?");
+            statement.setLong(1, id);
+            resultSet = databaseManager.executeReadQuery(statement);
+
+            if (resultSet.next()) {
+                return createPersonFromResult(resultSet);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Não achou a tabela ou não conectou ao banco de dados (PersonDAO - FindByName)");
+            e.printStackTrace();
+        }
+
         return null;
     }
 
@@ -92,7 +107,9 @@ public class PersonDao implements CRUD<Person> {
             }
 
             while (resultSet.next()) {
-                personList.add(createPersonFromResult(resultSet));
+                Person person = createPersonFromResult(resultSet);
+                person.setAddress(createAddressFromResult(resultSet));
+                personList.add(person);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -101,8 +118,6 @@ public class PersonDao implements CRUD<Person> {
     }
 
     private Person createPersonFromResult(ResultSet resultSet) throws SQLException {
-        Address address = createAddressFromResult(resultSet);
-
         return new Person(
                 resultSet.getLong("ID_PESSOA"),
                 resultSet.getLong("CPF"),
@@ -110,7 +125,7 @@ public class PersonDao implements CRUD<Person> {
                 Gender.getGender(resultSet.getString("SEXO")),
                 resultSet.getDate("NASCIMENTO"),
                 resultSet.getInt("ISPREGNANT") != 0,
-                address,
+                null,
                 resultSet.getLong("ID_SUS"));
     }
 
@@ -124,7 +139,6 @@ public class PersonDao implements CRUD<Person> {
                 resultSet.getInt("ESTADO_ID_ESTADO"));
     }
 
-    //TODO: FIX JOIN QUERY
     private ResultSet doSelectQuery() throws SQLException {
         PreparedStatement statement;
         statement = connection.prepareStatement(

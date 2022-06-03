@@ -1,10 +1,13 @@
 import com.bayer.business.model.Address;
+import com.bayer.business.model.DiseaseRecord;
 import com.bayer.business.model.Gender;
 import com.bayer.business.model.Person;
 import com.bayer.data.dao.AddressDAO;
+import com.bayer.data.dao.DiseaseRecordDao;
 import com.bayer.data.dao.PersonDao;
 
 import java.util.GregorianCalendar;
+import java.util.List;
 
 import static com.bayer.data.dao.ObjectFactoryForDAO.address1;
 import static com.bayer.data.dao.ObjectFactoryForDAO.address2;
@@ -31,9 +34,16 @@ public class PersonTeste {
 //
 //        personDao.updateCompanion(personTeste2);
 //        personDao.updateCompanion(personTeste);
+        DiseaseRecordDao diseaseRecordDao = new DiseaseRecordDao();
 
         for (Person p : personDao.selectAll()) {
-            System.out.println(p.toString());
+            List<DiseaseRecord> records = diseaseRecordDao.findRecordsByPersonId(p.getIdPerson());
+            p.setDiseaseRecords(records);
+            System.out.println(p);
+        }
+
+        for (DiseaseRecord record : diseaseRecordDao.selectAll()) {
+            System.out.println(record.toString());
         }
 
     }

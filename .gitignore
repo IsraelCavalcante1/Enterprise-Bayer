@@ -1,1 +1,7 @@
-target
+target/*
+**/*.localz
+**/*.local
+**/*.git
+**/*.DS_Store
+.idea
+/target

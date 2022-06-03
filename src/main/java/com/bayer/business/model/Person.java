@@ -18,17 +18,6 @@ public class Person {
     private Address address;
     private long idSus;
 
-//    public Person(long cpf, String name, Person companion, List<Person> dependents, Gender gender, Date birthDate, boolean isPregnant, List<DiseaseRecord> diseaseRecords) {
-//        this.cpf = cpf;
-//        this.name = name;
-//        this.companion = companion;
-//        this.dependents = dependents;
-//        this.gender = gender;
-//        this.birthDate = birthDate;
-//        this.isPregnant = isPregnant;
-//        this.diseaseRecords.addAll(diseaseRecords);
-//    }
-
     public Person(long idPerson, long cpf, String name, Gender gender, Date birthDate, boolean isPregnant, Address address, long idSus) {
         this.idPerson = idPerson;
         this.cpf = cpf;
@@ -40,12 +29,7 @@ public class Person {
         this.idSus = idSus;
     }
 
-//    public Person(long cpf, String name, Person companion, List<Person> dependents, Gender gender, Date birthDate, boolean isPregnant, DiseaseRecord diseaseRecord) {
-//        this(cpf, name, companion, dependents, gender, birthDate, isPregnant, List.of(diseaseRecord));
-//    }
-
-
-    public Person(int idPerson) {
+    public Person(long idPerson) {
         this.idPerson = idPerson;
     }
 
@@ -115,7 +99,7 @@ public class Person {
     }
 
     public void setDiseaseRecords(List<DiseaseRecord> diseaseRecords) {
-        this.diseaseRecords = diseaseRecords;
+        this.diseaseRecords.addAll(diseaseRecords);
     }
 
     public boolean isPregnant() {
@@ -130,7 +114,7 @@ public class Person {
         return address;
     }
 
-    public void setAdress(Address adress) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 

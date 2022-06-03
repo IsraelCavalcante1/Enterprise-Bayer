@@ -1,8 +1,9 @@
 package com.bayer.business.model;
 
-import java.util.Date;
 
 //TODO AVISAR GU QUE ADICIONAMOS A PESSOA
+
+import java.sql.Date;
 
 public class DiseaseRecord {
     private int id;
