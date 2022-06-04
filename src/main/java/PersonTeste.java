@@ -9,12 +9,10 @@ import com.bayer.data.dao.PersonDao;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import static com.bayer.data.dao.ObjectFactoryForDAO.address1;
-import static com.bayer.data.dao.ObjectFactoryForDAO.address2;
 
 public class PersonTeste {
     public static void main(String[] args) {
-        Address address = address1();
+//        Address address = address1();
         PersonDao personDao = new PersonDao();
 
 //        AddressDAO addressDao = new AddressDAO();

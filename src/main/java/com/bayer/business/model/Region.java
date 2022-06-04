@@ -15,6 +15,13 @@ public enum Region {
         this.name = name;
     }
 
+    public static Region find(int id) {
+        for (Region r : values()) {
+            if (r.id == id) return r;
+        }
+        return null;
+    }
+
     public int getId() {
         return id;
     }

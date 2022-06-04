@@ -182,53 +182,19 @@
                                 <th>Registro de Enfermidade</th>
                                 <th>Enfermidade</th>
                             </tr>
-
                             </thead>
-                            <%--                            <% while (rs.next()) { %>--%>
-                            <tr>
-                                <td>
-                                    <%--                                    <%= rs.getString("NOME") %>--%>
-                                </td>
+                            <tbody>
+                            <c:forEach items="${personList}" var="p">
+                                <tr>
+                                    <td>${p.name}</td>
+                                    <td>${p.address.regionName}</td>
+                                    <td>${p.civilState}</td>
+                                    <td>${p.age}</td>
+                                    <td><fmt:formatDate value="${p.lastDiseaseRecord.date}" pattern="dd/MM/yyyy"/></td>
+                                    <td>${p.lastDiseaseRecord.disease.name}</td>
+                                </tr>
 
-
-                                <td>
-                                    <%--                                    <%= rs.getString("NOME_REGIAO") %>--%>
-                                </td>
-
-                                <td>
-                                    <%--                                    <% if (rs.getString("PESSOA_ID_PESSOA") != null) {%>--%>
-                                    <%--                                    <%= "Casado" %>--%>
-                                    <%--                                    <%} else if (rs.getString("PESSOA_ID_PESSOA") == null) {%>--%>
-                                    <%--                                    <%= "Solteira" %>--%>
-                                    <%--                                    <%}%>--%>
-                                </td>
-                                <%--Lógica para pegar a idade--%>
-
-                                <%--                                <%--%>
-                                <%--                                    Date dataNascimento = rs.getDate("NASCIMENTO");--%>
-                                <%--                                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy");--%>
-                                <%--                                    String dataFormatadaString = simpleDateFormat.format(dataNascimento);--%>
-                                <%--                                    Integer dataFormatadaInt = Integer.parseInt(dataFormatadaString);--%>
-                                <%--                                    Date date = new Date();--%>
-                                <%--                                    Calendar calendar = new GregorianCalendar();--%>
-                                <%--                                    calendar.setTime(date);--%>
-                                <%--                                    int year = calendar.get(Calendar.YEAR);--%>
-                                <%--                                    idade = year - dataFormatadaInt;--%>
-                                <%--                                    System.out.println(idade);--%>
-                                <%--                                %>--%>
-
-                                <td>
-                                    <%--                                    <%=idade%>--%>
-                                </td>
-
-                                <td>
-                                    <%--                                    <%=rs.getDate("DATA_REGISTRO_DOENCA")%>--%>
-                                </td>
-                                <td>
-                                    <%--                                    <%=rs.getString("NOME_DOENCA")%>--%>
-                                </td>
-
-                            </tr>
+                            </c:forEach>
                             </tbody>
                         </table>
                     </div>

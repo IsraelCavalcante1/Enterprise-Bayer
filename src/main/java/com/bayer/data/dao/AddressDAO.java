@@ -23,7 +23,7 @@ public class AddressDAO implements CRUD<Address>{
             statement.setString(2, address.getNeighborhood());
             statement.setString(3, address.getStreet());
             statement.setInt(4, address.getNumber());
-            statement.setInt(5, address.getIdState());
+            statement.setInt(5, address.getState().getId());
 
             return databaseManager.executeWriteQuery(statement);
         } catch (SQLException e) {

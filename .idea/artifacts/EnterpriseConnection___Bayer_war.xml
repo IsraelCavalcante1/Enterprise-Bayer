@@ -3,12 +3,14 @@
     <output-path>$PROJECT_DIR$/target</output-path>
     <properties id="maven-jee-properties">
       <options>
+        <exploded>false</exploded>
         <module>EnterpriseConnection - Bayer</module>
         <packaging>war</packaging>
+        <unpackNestedArchives>false</unpackNestedArchives>
       </options>
     </properties>
     <root id="archive" name="Bayer-1.0-SNAPSHOT.war">
-      <element id="artifact" artifact-name="EnterpriseBayer" />
+      <element id="artifact" artifact-name="EnterpriseConnection - Bayer:war exploded" />
     </root>
   </artifact>
 </component>

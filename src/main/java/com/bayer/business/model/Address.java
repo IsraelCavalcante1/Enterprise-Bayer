@@ -7,22 +7,23 @@ public class Address {
     private String neighborhood;
     private String street;
     private int number;
-    private int idState;
+    private UnionState state;
 
-    public Address(int id, String city, String neighborhood, String street, int number, int idState) {
+    public Address(int id, String city, String neighborhood, String street, int number, UnionState idState) {
         this.id = id;
         this.city = city;
         this.neighborhood = neighborhood;
         this.street = street;
         this.number = number;
-        this.idState = idState;
+        this.state = idState;
     }
-    public Address(String city, String neighborhood, String street, int number, int idState) {
+
+    public Address(String city, String neighborhood, String street, int number, UnionState idState) {
         this.city = city;
         this.neighborhood = neighborhood;
         this.street = street;
         this.number = number;
-        this.idState = idState;
+        this.state = idState;
     }
 
     public String getFullAddress() {
@@ -32,7 +33,7 @@ public class Address {
                 .append(", ").append(number)
                 .append(neighborhood).append(" ")
                 .append(city).append(" ")
-                ;
+        ;
         return sb.toString();
     }
 
@@ -76,11 +77,15 @@ public class Address {
         this.number = number;
     }
 
-    public int getIdState() {
-        return idState;
+    public UnionState getState() {
+        return state;
     }
 
-    public void setState(int idState) {
-        this.idState = idState;
+    public void setState(UnionState state) {
+        this.state = state;
+    }
+
+    public String getRegionName() {
+        return state.getRegion().getName();
     }
 }

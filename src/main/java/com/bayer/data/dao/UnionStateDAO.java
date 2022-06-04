@@ -1,14 +1,16 @@
 package com.bayer.data.dao;
 
 import com.bayer.business.model.Person;
+import com.bayer.business.model.Region;
 import com.bayer.business.model.UnionState;
 
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-public class UnionStateDAO implements CRUD<UnionState>{
+public class UnionStateDAO implements CRUD<UnionState> {
 
 
     @Override
@@ -51,6 +53,24 @@ public class UnionStateDAO implements CRUD<UnionState>{
 
     @Override
     public UnionState findById(long id) {
+        ResultSet resultSet;
+        try {
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM ESTADO WHERE ID_ESTADO = ?");
+            statement.setLong(1, id);
+            resultSet = databaseManager.executeReadQuery(statement);
+
+            if (resultSet.next()) {
+                return new UnionState(
+                        Region.find(resultSet.getInt("REGIAO_ID_REGIAO")),
+                        resultSet.getString("NOME_ESTADO"),
+                        resultSet.getString("UF"));
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Não achou a tabela ou não conectou ao banco de dados (UnionStateDAO - FindByID)");
+            e.printStackTrace();
+        }
+
         return null;
     }
 

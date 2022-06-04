@@ -3,6 +3,7 @@ package com.bayer.data.dao;
 import com.bayer.business.model.Address;
 import com.bayer.business.model.Gender;
 import com.bayer.business.model.Person;
+import com.bayer.business.model.UnionState;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -127,13 +128,15 @@ public class PersonDao implements CRUD<Person> {
     }
 
     private Address createAddressFromResult(ResultSet resultSet) throws SQLException {
+        UnionStateDAO stateDAO = new UnionStateDAO();
+        UnionState state = stateDAO.findById(resultSet.getInt("ESTADO_ID_ESTADO"));
         return new Address(
                 resultSet.getInt("ENDERECO_ID_ENDERECO"),
                 resultSet.getString("CIDADE"),
                 resultSet.getString("BAIRRO"),
                 resultSet.getString("RUA"),
                 resultSet.getInt("NUMERO"),
-                resultSet.getInt("ESTADO_ID_ESTADO"));
+                state);
     }
 
     private ResultSet doSelectQuery() throws SQLException {

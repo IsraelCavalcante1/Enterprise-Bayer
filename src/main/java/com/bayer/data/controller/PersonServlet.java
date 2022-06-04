@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet (name = "dashboard", value="/dashboard.jsp")
+@WebServlet("/index.jsp")
 public class PersonServlet extends HttpServlet {
 
     private PersonDao personDao;
@@ -39,7 +39,7 @@ public class PersonServlet extends HttpServlet {
         for (Person p : personList) {
             List<DiseaseRecord> records = diseaseRecordDao.findRecordsByPersonId(p.getIdPerson());
             p.setDiseaseRecords(records);
-//            p.setCompanion(personDao.findCompanionById(p.getIdPerson()));
+            p.setCompanion(personDao.findCompanionById(p.getIdPerson()));
         }
     }
 

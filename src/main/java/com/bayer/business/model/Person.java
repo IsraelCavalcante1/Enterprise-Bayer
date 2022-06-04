@@ -1,11 +1,13 @@
 package com.bayer.business.model;
 
+import java.io.Serializable;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
-public class Person {
+public class Person implements Serializable {
     private long idPerson;
     private long cpf;
     private String name;
@@ -34,8 +36,10 @@ public class Person {
     }
 
     public int getAge() {
-        long timeDifference = Calendar.getInstance().getTime().getTime() - birthDate.getTime();
-        return new Calendar.Builder().setInstant(timeDifference).build().get(Calendar.YEAR);
+        long timeDifference = Date.from(Instant.now()).getTime() - birthDate.getTime();
+        return Math.abs(Calendar.getInstance().get(Calendar.YEAR) -
+                new Calendar.Builder().setInstant(birthDate).build().get(Calendar.YEAR));
+
     }
 
     public long getIdPerson() {
@@ -127,11 +131,16 @@ public class Person {
     }
 
     public String getCivilState() {
-        if (companion == null) {
+        if (companion != null) {
             return gender == Gender.MALE ? "Casado" : "Casada";
         } else {
             return gender == Gender.MALE ? "Solteiro" : "Solteira";
         }
+    }
+
+    public DiseaseRecord getLastDiseaseRecord() {
+        int lastIndex = diseaseRecords.size() - 1;
+        return diseaseRecords.get(lastIndex);
     }
 
     @Override
